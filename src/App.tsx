@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import TextInput from './components/TextInput';
+import useDebounce from './hooks/useDebounced';
 import useSearchResults from './hooks/useSearchResult';
+import TextInput from './components/TextInput';
 
 function App() {
   const [searchText, setSearchText] = useState('');
-  const { isLoading, results } = useSearchResults(searchText);
-
+  const debouncedSearch = useDebounce(searchText, 300);
+  const { isLoading, results } = useSearchResults(debouncedSearch);
   return (
     <div>
       <TextInput
