@@ -1,4 +1,3 @@
-// SearchResultHandler.js
 import { MdSmsFailed } from 'react-icons/md';
 import { FaQuestionCircle } from 'react-icons/fa';
 import LoadingSpinner from '../LoadingSpinner';
