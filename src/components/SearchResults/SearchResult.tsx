@@ -1,14 +1,14 @@
 import type {
-  SearchResult,
+  SearchRes,
   TransactionResult,
   AccountResult,
 } from '../../types/searchResult';
 import Transaction from './Transaction';
 import Account from './Account';
 
-function Notification(props: SearchResult) {
+function SearchResult(props: SearchRes) {
   const isTransactionResult = (
-    searchResult: SearchResult
+    searchResult: SearchRes
   ): searchResult is TransactionResult => {
     return (
       searchResult.type === 'TRANSACTION_RECEIVED' ||
@@ -17,7 +17,7 @@ function Notification(props: SearchResult) {
   };
 
   const isAccountResult = (
-    searchResult: SearchResult
+    searchResult: SearchRes
   ): searchResult is AccountResult => {
     return searchResult.type === 'ACCOUNT_CREATED';
   };
@@ -36,4 +36,4 @@ function Notification(props: SearchResult) {
   return <div>{determineType()}</div>;
 }
 
-export default Notification;
+export default SearchResult;

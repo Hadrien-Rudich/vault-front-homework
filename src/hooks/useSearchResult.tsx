@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import type { SearchResult } from '../types/searchResult';
+import type { SearchRes } from '../types/searchResult';
 import fetchSearchResults from '../services/apiServices';
 
 function useSearchResults(searchText: string) {
   const [isLoading, setLoading] = useState(false);
-  const [results, setResults] = useState<null | SearchResult[]>(null);
+  const [results, setResults] = useState<null | SearchRes[]>(null);
 
   useEffect(() => {
     let isMounted = true;

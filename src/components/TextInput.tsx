@@ -12,7 +12,7 @@ type Props = Omit<
 };
 
 function TextInput(props: Props) {
-  const { onChange } = props;
+  const { onChange, onKeyDown, value } = props;
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) =>
     onChange(e.target.value);
   return (
@@ -21,6 +21,8 @@ function TextInput(props: Props) {
       type="text"
       placeholder="Type to filter events..."
       onChange={handleChange}
+      onKeyDown={onKeyDown}
+      value={value}
     />
   );
 }

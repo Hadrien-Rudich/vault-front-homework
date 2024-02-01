@@ -21,4 +21,4 @@ export interface AccountResult extends BaseResult {
   data: AccountSpecific;
 }
 
-export type SearchResult = TransactionResult | AccountResult;
+export type SearchRes = TransactionResult | AccountResult;
