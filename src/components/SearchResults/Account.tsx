@@ -18,7 +18,7 @@ function Account(props: AccountResult) {
           </div>
         </div>
       </div>
-      <div className="sm:w-1/5 w-3/5 flex flex-col sm:items-left items-center">
+      <div className="sm:w-1/5 w-3/5 flex flex-col  sm:items-start items-center">
         <p className="sm:w-3/5 w-3/5 "> {data.name} </p>
       </div>
       <div className="lg:w-3/5 sm:w-4/5 w-2/5 flex">
