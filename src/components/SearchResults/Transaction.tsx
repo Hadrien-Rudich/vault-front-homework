@@ -13,31 +13,31 @@ function Transaction(props: TransactionResult) {
     >
       <div className="sm:w-1/5 w-10">
         {type === 'TRANSACTION_RECEIVED' ? (
-          <div className="flex items-center md:gap-6 gap-2">
-            <CgArrowLeftO className="md:flex hidden lg:h-7 lg:w-7 h-5 w-5" />
-            <p className="truncate">Received </p>
+          <div className="flex items-center gap-6">
+            <CgArrowLeftO className="lg:h-7 lg:w-7 h-5 w-5" />
+            <p className="truncate md:flex hidden">Received </p>
           </div>
         ) : (
           <div className="flex items-center md:gap-6 gap-2">
-            <CgArrowRightO className="md:flex hidden lg:h-7 lg:w-7 h-5 w-5" />
-            <p className="truncate">Sent </p>
+            <CgArrowRightO className="lg:h-7 lg:w-7 h-5 w-5" />
+            <p className="truncate md:flex hidden">Sent </p>
           </div>
         )}
       </div>
 
-      <div className="sm:w-1/5 w-10 sm:flex sm:flex-row flex-col items-center sm:gap-4 gap-1">
-        <p className="w-1/2">{data.amount} </p>
-        <p className="w-1/2"> {data.unit} </p>
+      <div className="sm:w-1/5 w-10 md:flex md:flex-row flex-col items-center sm:gap-4 gap-1">
+        <p className="w-1/6 text-right">{data.amount} </p>
+        <p className="w-1/6"> {data.unit} </p>
       </div>
 
-      <div className="lg:w-2/5 w-4/5 flex flex-col italic text-gray-600">
+      <div className="lg:w-3/5 w-4/5 flex flex-col italic text-gray-600">
         {type === 'TRANSACTION_RECEIVED' ? (
-          <div className="flex flex-col">
+          <div className="lg:flex lg:flex-row flex flex-col">
             <p>from:</p>
             <p className="truncate sm:w-full w-5/6">{data.from} </p>
           </div>
         ) : (
-          <div className="flex flex-col">
+          <div className="lg:flex lg:flex-row flex flex-col">
             <p>to: </p>
             <p className="truncate sm:w-full w-5/6"> {data.to} </p>
           </div>
