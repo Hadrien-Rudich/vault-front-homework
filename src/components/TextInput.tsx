@@ -15,7 +15,14 @@ function TextInput(props: Props) {
   const { onChange } = props;
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) =>
     onChange(e.target.value);
-  return <input className="border-4 p-2" type="text" onChange={handleChange} />;
+  return (
+    <input
+      className="border-4 p-2"
+      type="text"
+      placeholder="Type to filter events..."
+      onChange={handleChange}
+    />
+  );
 }
 
 export default TextInput;

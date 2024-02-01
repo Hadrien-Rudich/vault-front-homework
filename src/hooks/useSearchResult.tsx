@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { SearchResult } from '../types/searchResult';
+import type { SearchResult } from '../types/searchResult';
 import fetchSearchResults from '../services/apiServices';
 
 function useSearchResults(searchText: string) {
