@@ -1,16 +1,24 @@
-export interface SearchResult {
+export interface BaseResult {
   id: string;
   type: string;
-  data: {
-    id: number;
-    amount: number;
-    unit: string;
-    from: string;
-    to: string;
-  };
+}
+export interface TransactionSpecific {
+  id: number;
+  amount: number;
+  unit: string;
+  from: string;
+  to: string;
+}
+export interface TransactionResult extends BaseResult {
+  data: TransactionSpecific;
+}
+export interface AccountSpecific {
+  id: number;
+  name: string;
+  currency: string;
+}
+export interface AccountResult extends BaseResult {
+  data: AccountSpecific;
 }
 
-export interface SearchResultHook {
-  isLoading: boolean;
-  results: SearchResult[] | null;
-}
+export type SearchResult = TransactionResult | AccountResult;
